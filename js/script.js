@@ -24,19 +24,19 @@ const validate = (event) => {
         errors.appendChild(liError)
     }
 
-    if (!txtEmail.value.inclued('@')) {
+    if (!txtEmail.value.includes('@')) {
         let liError = document.createElement('li');
         liError.innerText = 'Adres e-mail musi zawierać @';
         errors.appendChild(liError)
     }
 
-    if (agree1.checked) {
+    if (!agree1.checked) {
         let liError = document.createElement('li');
         liError.innerText = 'Nie wyraziłeś Zgody1!';
         errors.appendChild(liError)
     }
 
-    if (errors.children.lenght > 0) {
+    if (errors.children.length > 0) {
         event.preventDefault();
     }
 }
